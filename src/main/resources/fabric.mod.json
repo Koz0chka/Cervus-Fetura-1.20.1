@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "cervusfetura",
+	"version": "${version}",
+	"name": "Cervus Fetura",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"koz0chka"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/cervusfetura/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.koz0chka.cervusfetura.CervusFetura"
+		],
+		"client": [
+			"net.koz0chka.cervusfetura.CervusFeturaClient"
+		],
+		"fabric-datagen": [
+			"net.koz0chka.cervusfetura.CervusFeturaDataGenerator"
+		]
+	},
+	"mixins": [
+		"cervusfetura.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.6",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
