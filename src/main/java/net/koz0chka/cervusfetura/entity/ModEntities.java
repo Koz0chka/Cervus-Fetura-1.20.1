@@ -16,7 +16,7 @@ public class ModEntities {
     public static final EntityType<DeerEntity> DEER = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(CervusFetura.MOD_ID, "deer"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, DeerEntity::new)
-                    .dimensions(EntityDimensions.fixed(1f, 1f)).build());
+                    .dimensions(EntityDimensions.fixed(1.6f, 1.6f)).build());
 
     public static void registerModEntities() {
         CervusFetura.LOGGER.info("Registering Entities for " + CervusFetura.MOD_ID);

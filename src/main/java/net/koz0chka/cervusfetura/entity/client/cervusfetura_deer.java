@@ -4,6 +4,7 @@
 
 package net.koz0chka.cervusfetura.entity.client;
 
+import net.koz0chka.cervusfetura.entity.animation.ModAnimations;
 import net.koz0chka.cervusfetura.entity.custom.DeerEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
@@ -11,6 +12,7 @@ import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
 public class cervusfetura_deer<T extends DeerEntity> extends SinglePartEntityModel<T> {
 	private final ModelPart body;
@@ -72,6 +74,7 @@ public class cervusfetura_deer<T extends DeerEntity> extends SinglePartEntityMod
 
 	@Override
 	public void setAngles(DeerEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-
+		this.getPart().traverse().forEach(ModelPart::resetTransform);
+		this.updateAnimation(entity.idlingAnimationState, ModAnimations.IDLE, 1f);
 	}
 }
